@@ -18,5 +18,11 @@
     "utilities",
     "extensions"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeomseon0516/Unity.Core.git"
+  },
+  "changelogUrl": "https://github.com/jeomseon0516/Unity.Core/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/jeomseon0516/Unity.Core/blob/main/LICENSE.md"
 }
