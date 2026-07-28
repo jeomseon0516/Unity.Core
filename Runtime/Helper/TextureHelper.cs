@@ -11,18 +11,9 @@ namespace Jeomseon.Helper
             Color[] newPixels = new Color[targetWidth * targetHeight];
 
             float aspectRatio = (float)originalWidth / originalHeight;
-            int resizeWidth, resizeHeight;
-
-            if (aspectRatio > 1)
-            {
-                resizeWidth = targetWidth;
-                resizeHeight = Mathf.RoundToInt(targetWidth / aspectRatio);
-            }
-            else
-            {
-                resizeHeight = targetHeight;
-                resizeWidth = Mathf.RoundToInt(targetHeight * aspectRatio);
-            }
+            (int resizeWidth, int resizeHeight) = aspectRatio > 1 
+                ? (targetWidth, Mathf.RoundToInt(targetWidth / aspectRatio))
+                : (targetHeight, Mathf.RoundToInt(targetHeight / aspectRatio));
 
             float ratioX = (float)originalWidth / resizeWidth;
             float ratioY = (float)originalHeight / resizeHeight;
