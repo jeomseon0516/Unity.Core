@@ -34,7 +34,7 @@ Jeomseon Unity 패키지들이 공통으로 사용하는 컬렉션, 확장 메�
 Unity Package Manager의 `Install package from git URL`에 다음 URL을 입력합니다.
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.1.1
+https://github.com/jeomseon0516/Unity.Core.git#v0.1.2
 ```
 
 ## 로컬 개발

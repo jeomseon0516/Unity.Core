@@ -1,6 +1,6 @@
 {
   "name": "com.jeomseon.unity.core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "Jeomseon Unity Core",
   "description": "Core collections, extensions, helpers, serialization utilities, and state machine types for Unity projects.",
   "unity": "2022.3",
@@ -24,5 +24,12 @@
     "url": "https://github.com/jeomseon0516/Unity.Core.git"
   },
   "changelogUrl": "https://github.com/jeomseon0516/Unity.Core/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/jeomseon0516/Unity.Core/blob/main/LICENSE.md"
+  "licensesUrl": "https://github.com/jeomseon0516/Unity.Core/blob/main/LICENSE.md",
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "패키지 핵심 API를 확인하는 최소 사용 예제입니다.",
+      "path": "Samples~/BasicUsage"
+    }
+  ]
 }

@@ -34,7 +34,7 @@ Register the OpenUPM scoped registry once in `Packages/manifest.json`.
 Use this URL with Unity Package Manager's `Install package from git URL` command.
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.1.1
+https://github.com/jeomseon0516/Unity.Core.git#v0.1.2
 ```
 
 ## Local development
