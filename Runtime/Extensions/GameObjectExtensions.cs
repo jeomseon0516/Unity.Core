@@ -1,9 +1,14 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Jeomseon.Extensions
 {
+    // TODO(리팩토링): ComponentExtensions와 중복되는 Transform 접근 API를 통합하고,
+    // 단순 프로퍼티 래퍼와 배열을 할당하는 자식 탐색 API의 유지 필요성을 검토해야 합니다.
+    // SetLocalPosition 계열은 축별 회귀 테스트를 추가해야 합니다.
     public static class GameObjectExtensions
     {
         public static Vector3 GetPosition(this GameObject gameObject) => gameObject.transform.position;
@@ -32,7 +37,7 @@ namespace Jeomseon.Extensions
         public static void SetPositionZ(this GameObject gameObject, float z) => gameObject.transform.SetPositionZ(z);
 
         public static void SetLocalPositionX(this GameObject gameObject, float x) => gameObject.transform.SetLocalPositionX(x);
-        public static void SetLocalPositionY(this GameObject gameObject, float y) => gameObject.transform.SetLocalPositionX(y);
+        public static void SetLocalPositionY(this GameObject gameObject, float y) => gameObject.transform.SetLocalPositionY(y);
         public static void SetLocalPositionZ(this GameObject gameObject, float z) => gameObject.transform.SetLocalPositionZ(z);
 
         public static void SetLocalScaleX(this GameObject gameObject, float x) => gameObject.transform.SetLocalScaleX(x);
@@ -47,7 +52,7 @@ namespace Jeomseon.Extensions
 
         public static GameObject[] GetChildGameObjectsAll(this GameObject gameObject)
         {
-            List<GameObject> result = new();
+           using var pooled = ListPool<GameObject>.Get(out var gameObjects);
 
             // Stack을 사용해 반복적으로 자식 오브젝트를 탐색
             Stack<Transform> stack = new();
@@ -55,7 +60,7 @@ namespace Jeomseon.Extensions
 
             while (stack.TryPop(out Transform current))
             {
-                result.Add(current.gameObject);
+                gameObjects.Add(current.gameObject);
 
                 // 모든 자식 오브젝트를 스택에 추가
                 foreach (Transform child in current)
@@ -64,7 +69,7 @@ namespace Jeomseon.Extensions
                 }
             }
 
-            return result.ToArray();
+            return  gameObjects.ToArray();
         }
 
         public static GameObject[] GetChildGameObjects(this GameObject gameObject)

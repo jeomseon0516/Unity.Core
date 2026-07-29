@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace Jeomseon.Extensions
 {
+    // TODO(리팩토링): object 전체에 노출되는 Reflection 확장 메서드는 이름 충돌 가능성이 크므로
+    // ReflectionHelper 또는 별도 Reflection 모듈로 이동하고 FieldInfo 캐시 여부를 검토해야 합니다.
     public static class ObjectExtensions
     {
         public static bool Is<TCast>(this object obj, Action<TCast> castCall)

@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Jeomseon.Collections
 {
+    // TODO(ë¦¬íŒ©í† ë§): ìµœëŒ€ í™ì´ë¼ëŠ” ì •ë ¬ ê·œì¹™ê³¼ ì—´ê±° ìˆœì„œë¥¼ API ë¬¸ì„œì— ëª…ì‹œí•˜ê³ ,
+    // TryPeek/TryPop, ì´ˆê¸° ì»¬ë ‰ì…˜ ìƒì„±ì ë° ì¤‘ë³µ ìš°ì„ ìˆœìœ„ ë™ì‘ì„ í…ŒìŠ¤íŠ¸í•´ì•¼ í•©ë‹ˆë‹¤.
+    // Unityê°€ ì œê³µí•˜ëŠ” .NET PriorityQueueë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ë²„ì „ì—ì„œëŠ” ëŒ€ì²´ ê°€ëŠ¥ì„±ë„ ê²€í† í•©ë‹ˆë‹¤.
     public class PriorityQueue<T> : IEnumerable<T>, IEnumerable, IReadOnlyCollection<T>
     {
         private readonly IComparer<T> _comparer;
@@ -22,12 +25,12 @@ namespace Jeomseon.Collections
 
             int nowIndex = _heap.Count - 1;
 
-            // °¡Àå ³¡ ³ëµå¿¡ ¿ø¼Ò »ğÀÔ ÈÄ ¼øÂ÷ÀûÀ¸·Î ÀÚ½ÅÀÇ À§Ä¡¸¦ Ã£¾Æ°£´Ù.
+            // ê°€ì¥ ë ë…¸ë“œì— ì›ì†Œ ì‚½ì… í›„ ìˆœì°¨ì ìœ¼ë¡œ ìì‹ ì˜ ìœ„ì¹˜ë¥¼ ì°¾ì•„ê°„ë‹¤.
             while (nowIndex > 0)
             {
                 int parentIndex = (nowIndex - 1) / 2;
 
-                if (_comparer.Compare(_heap[nowIndex], _heap[parentIndex]) < 0) // Æ¯Á¤ Á¶°Ç¿¡ ¸¸Á·ÇÏ´Â °æ¿ì ÀÚ½ÅÀÇ À§Ä¡°¡ µÈ´Ù.
+                if (_comparer.Compare(_heap[nowIndex], _heap[parentIndex]) < 0) // íŠ¹ì • ì¡°ê±´ì— ë§Œì¡±í•˜ëŠ” ê²½ìš° ìì‹ ì˜ ìœ„ì¹˜ê°€ ëœë‹¤.
                     break;
 
                 (_heap[parentIndex], _heap[nowIndex]) = (_heap[nowIndex], _heap[parentIndex]);
@@ -38,7 +41,7 @@ namespace Jeomseon.Collections
         {
             if (_heap.Count == 0) throw new InvalidOperationException("PriorityQueue is empty");
 
-            // Ç×»ó ·çÆ® ³ëµå´Â Æ¯Á¤ Á¶°Ç¿¡ ÀÇÇØ Á¤·ÄµÈ °ªÀÌ¹Ç·Î ·çÆ® ³ëµå¸¦ ¹İÈ¯ ÇØÁØ´Ù.
+            // í•­ìƒ ë£¨íŠ¸ ë…¸ë“œëŠ” íŠ¹ì • ì¡°ê±´ì— ì˜í•´ ì •ë ¬ëœ ê°’ì´ë¯€ë¡œ ë£¨íŠ¸ ë…¸ë“œë¥¼ ë°˜í™˜ í•´ì¤€ë‹¤.
             T ret = _heap[0];
 
             int lastIndex = _heap.Count - 1;

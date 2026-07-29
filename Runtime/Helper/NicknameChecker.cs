@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace Jeomseon.Helper
 {
+    // TODO(모듈화): 닉네임 검증은 범용 Core보다 애플리케이션 도메인 규칙에 가까우므로
+    // 별도 Validation 모듈로 이동할지 검토하고, 정규식 캐시와 결과 타입을 도입해야 합니다.
     public static class NicknameChecker
     {
         /// <summary>

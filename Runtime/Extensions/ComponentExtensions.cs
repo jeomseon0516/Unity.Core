@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Jeomseon.Extensions
 {
+    // TODO(리팩토링): GameObjectExtensions 및 TransformExtensions와 중복되는 API를 정리하고,
+    // null Component와 파괴된 UnityEngine.Object에 대한 처리 규칙을 통일해야 합니다.
     public static class ComponentExtensions
     {
         public static void SetActiveGameObject(this Component component, bool isActive) => component.gameObject.SetActive(isActive); 

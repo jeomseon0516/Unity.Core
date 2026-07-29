@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 namespace Jeomseon.Collections
 {
+    // TODO(리팩토링): 비예외 API와 IReadOnlyCollection<T> 지원을 정리하고,
+    // 대규모 데이터에서 LinkedList 기반 구현과 원형 버퍼 구현의 성능을 비교해야 합니다.
     public class Deque<T> : IEnumerable<T>
     {
         public int Count => _buffer.Count;

@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Jeomseon.Extensions
 {
+    // TODO(리팩토링): 삭제 중 인덱스가 변경되는 메서드의 연속 항목 처리 여부를 테스트하고,
+    // RemoveElements의 이름·predicate 계약과 Pop 실패 시 반환 정책을 명확하게 정의해야 합니다.
     public static class ListExtensions
     {
         public static void AddElements<T>(this List<T> values, params T[] element) => values.AddRange(element);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Jeomseon.Helper
 {
+    // TODO(모듈화): 텍스처 리샘플링은 Core보다 이미지 처리 기능에 가까우므로 별도 모듈 이동을 검토하고,
+    // 입력 크기 검증, 보간 방식, 메모리 할당 및 Job/Burst 적용 가능성을 비교해야 합니다.
     public static class TextureHelper
     {
         public static Color[] ResizeColorPixel(Color[] originalPixels, int originalWidth, int originalHeight, int targetWidth, int targetHeight)

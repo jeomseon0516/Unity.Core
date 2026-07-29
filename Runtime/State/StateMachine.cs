@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Jeomseon.State
 {
+    // TODO(리팩토링): 상태 캐시 키를 문자열 이름 대신 Type으로 변경하고 동일 상태 재진입,
+    // Enter/Exit 예외, 상태 초기화·제거 및 상태 변경 이벤트의 정책을 정의해야 합니다.
+    // 공개 API 변경 전 단순 FSM과 계층형 FSM의 확장 경계를 먼저 결정합니다.
     /// <summary>
     /// .. StatePattern을 사용하려면 해당 인터페이스를 상속받아야 합니다.
     /// </summary>

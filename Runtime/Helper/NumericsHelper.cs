@@ -2,6 +2,8 @@ using System;
 
 namespace Jeomseon.Helper
 {
+    // TODO(리팩토링): NumericExtensions와 기능이 중복되므로 하나의 공개 API로 통합하고,
+    // Unity Mathf 및 System.Math.Clamp로 대체 가능한 타입 범위를 검토해야 합니다.
     public static class NumericsHelper
     {
         // -----------------------------

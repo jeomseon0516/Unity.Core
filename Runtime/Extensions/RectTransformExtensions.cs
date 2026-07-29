@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Jeomseon.Extensions
 {
+    // TODO(리팩토링): 좌표 공간별 메서드 이름과 Camera/Canvas 렌더 모드별 계산 계약을 명확히 하고,
+    // UI Toolkit으로 대체 가능한 기능과 uGUI 전용 기능을 분리해야 합니다.
     public static class RectTransformExtensions
     {
         private static readonly Vector3[] _corners = new Vector3[4] { Vector2.zero, Vector2.zero, Vector2.zero, Vector2.zero };

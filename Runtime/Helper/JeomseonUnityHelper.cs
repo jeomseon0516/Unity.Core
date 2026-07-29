@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Jeomseon.Helper
 {
+    // TODO(리팩토링): Destroy/DestroyImmediate 래퍼가 제공하는 실제 이점을 검증하고,
+    // Play Mode와 Edit Mode에 따른 파괴 정책 및 ref 매개변수 사용 규칙을 정리해야 합니다.
     public static class JeomseonUnityHelper 
     {
         public static void DestroyObject<T>(ref T @object) where T : Object

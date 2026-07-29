@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Jeomseon.Helper
 {
+    // TODO(모듈화): Renderer/메시 경계 계산은 Core에서 분리할지 검토하고,
+    // 매 호출 GetComponentsInChildren과 배열 할당을 줄이는 API 및 로컬/월드 좌표 계약을 정의해야 합니다.
+    // 클래스 이름도 계산 결과가 드러나는 이름으로 변경해야 합니다.
     public static class VerticesTo
     {
         public static float GetHeightFromVertices(GameObject obj)

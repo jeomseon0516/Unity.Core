@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Jeomseon.State
 {
+    // TODO(API): Unity 생명주기와 혼동되는 Awake/Update/FixedUpdate 명칭을 일반 상태 계약으로 정리하고,
+    // 선택적 업데이트 인터페이스와 상태 수명 종료 계약이 필요한지 검토해야 합니다.
     /// <summary>
     /// .. 구현할 상태를 해당 인터페이스를 상속받아 구현합니다.
     /// IStateObject를 상속받는 클래스의 innerClass로 구현하는 것이 좋습니다.
