@@ -1,0 +1,21 @@
+{
+  "name": "Jeomseon.Unity.Core.Tests",
+  "rootNamespace": "Jeomseon.Tests",
+  "references": [
+    "Jeomseon.Unity.Core"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
