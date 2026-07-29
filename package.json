@@ -1,6 +1,6 @@
 {
   "name": "com.jeomseon.unity.core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "displayName": "Jeomseon Unity Core",
   "description": "Core collections, extensions, helpers, serialization utilities, and state machine types for Unity projects.",
   "unity": "2022.3",

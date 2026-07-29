@@ -124,7 +124,8 @@ namespace Jeomseon.Helper
                 return new Dictionary<string, int>();
             }
 
-            return Enum.GetNames(enumType)
+            return Enum
+                .GetNames(enumType)
                 .ToDictionary(
                     name => name,
                     name => Convert.ToInt32(Enum.Parse(enumType, name)));
@@ -132,7 +133,10 @@ namespace Jeomseon.Helper
 
         private static IEnumerable<Type> GetLoadableTypes()
         {
-            return AppDomain.CurrentDomain.GetAssemblies().SelectMany(GetLoadableTypes);
+            return AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(GetLoadableTypes);
         }
 
         private static IEnumerable<Type> GetLoadableTypes(Assembly assembly)

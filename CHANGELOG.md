@@ -1,5 +1,10 @@
 # 변경 기록
 
+## [0.1.3] - 2026-07-29
+
+- asmdef의 `rootNamespace`와 소스 파일 위치를 namespace에 맞게 정리했습니다.
+- `System.Runtime.CompilerServices` 호환 타입을 별도 어셈블리로 분리했습니다.
+
 ## [0.1.2] - 2026-07-29
 
 - `Deque<T>` 사용법을 확인하는 `Basic Usage` 샘플을 추가했습니다.

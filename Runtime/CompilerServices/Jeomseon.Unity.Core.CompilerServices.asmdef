@@ -1,0 +1,14 @@
+{
+  "name": "Jeomseon.Unity.Core.CompilerServices",
+  "rootNamespace": "System.Runtime.CompilerServices",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}
