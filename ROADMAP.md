@@ -16,9 +16,10 @@
 ## 작업 순서
 
 8. **P3-06 — 분리 배포 검증 체계 구축**
-    - Unity 참조 없이 순수 .NET 빌드와 단위 테스트가 통과하는 CI를 구성합니다.
-    - Unity에서는 UPM이 포함한 DLL을 통해 동일 API를 사용할 수 있는지 EditMode 및 Player 빌드로 검증합니다.
-    - 순수 .NET 계층이 Unity 타입이나 Unity 전용 전처리 심볼에 다시 의존하지 않도록 경계 검사를 추가합니다.
+    - [x] Unity 참조 없이 순수 .NET 빌드와 단위 테스트가 통과하는 CI를 구성했습니다.
+    - [x] 공개 OpenUPM 패키지만 사용하는 Unity 6000.3.15f1 프로젝트에서 컴파일, Mono Player 및 IL2CPP Player 빌드를 검증했습니다.
+    - [x] IL2CPP Player 실행으로 캐시된 Reflection 필드 접근이 stripping 이후에도 동작하는지 검증했습니다.
+    - [ ] 순수 .NET 계층이 Unity 타입이나 Unity 전용 전처리 심볼에 다시 의존하지 않도록 경계 검사를 자동화합니다.
 
 ## 향후 패키지 분리 후보
 
