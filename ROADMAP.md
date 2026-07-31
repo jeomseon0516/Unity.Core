@@ -19,7 +19,7 @@
     - [x] Unity 참조 없이 순수 .NET 빌드와 단위 테스트가 통과하는 CI를 구성했습니다.
     - [x] 공개 OpenUPM 패키지만 사용하는 Unity 6000.3.15f1 프로젝트에서 컴파일, Mono Player 및 IL2CPP Player 빌드를 검증했습니다.
     - [x] IL2CPP Player 실행으로 캐시된 Reflection 필드 접근이 stripping 이후에도 동작하는지 검증했습니다.
-    - [ ] 순수 .NET 계층이 Unity 타입이나 Unity 전용 전처리 심볼에 다시 의존하지 않도록 경계 검사를 자동화합니다.
+    - [x] 순수 .NET DLL의 AssemblyRef와 Unity 패키지의 UPM 의존 방향·소스 중복을 검사하는 CI 경계 검사를 자동화했습니다.
 
 ## 향후 패키지 분리 후보
 
