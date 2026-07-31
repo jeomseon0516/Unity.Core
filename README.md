@@ -2,11 +2,11 @@
 
 한국어 | [English](./README.en.md)
 
-Jeomseon Unity 패키지들이 공통으로 사용하는 컬렉션, 확장 메서드, 헬퍼, 직렬화 유틸리티 및 상태 머신을 제공합니다.
+Jeomseon Unity 패키지들이 공통으로 사용하는 Unity 전용 확장과 기능 모듈을 제공합니다.
 
 ## 요구 사항
 
-- Unity 2022.3 이상
+- Unity 6000.3.15f1 이상
 
 ## OpenUPM으로 설치
 
@@ -19,12 +19,12 @@ Jeomseon Unity 패키지들이 공통으로 사용하는 컬렉션, 확장 메�
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.jeomseon.unity"
+        "com.jeomseon"
       ]
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.core": "0.1.1"
+    "com.jeomseon.unity.core": "0.2.0"
   }
 }
 ```
@@ -34,7 +34,7 @@ Jeomseon Unity 패키지들이 공통으로 사용하는 컬렉션, 확장 메�
 Unity Package Manager의 `Install package from git URL`에 다음 URL을 입력합니다.
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.1.2
+https://github.com/jeomseon0516/Unity.Core.git#v0.2.0
 ```
 
 ## 로컬 개발
@@ -56,13 +56,16 @@ Unity Project 창의 `Packages/Jeomseon Unity Core`에서 코드를 확인하고
 
 ## 포함 기능
 
-- `Jeomseon.Collections`: Deque, PriorityQueue
-- `Jeomseon.Extensions`: Unity 및 .NET 확장 메서드
-- `Jeomseon.Helper`: 수학, 색상, 파싱, 문자열 및 텍스처 헬퍼
-- `Jeomseon.Helper.ReflectionHelper`: 안전한 타입 검색 및 구현 타입 생성 유틸리티
-- `Jeomseon.State`: 캐시 기반 상태 머신
-- Unity 값 직렬화 유틸리티
-- 컴파일러 호환 타입
+- `Jeomseon.GameObjects`: GameObject와 Transform 확장
+- `Jeomseon.Mathematics`: Unity Color와 Vector 변환 및 연산
+- `Jeomseon.Events`, `Jeomseon.UIElements`: UnityEvent와 UI Toolkit 확장
+- `Jeomseon.Imaging`, `Jeomseon.Rendering`: CPU 픽셀 리샘플링과 Renderer Bounds 계산
+
+## 의존 패키지
+
+- UPM이 `com.jeomseon.core`를 함께 설치합니다.
+- `Jeomseon.Collections`: Deque, PriorityQueue 및 일반 컬렉션 확장
+- `Jeomseon.Reflection`: 타입 탐색, 인스턴스 생성 및 캐시된 멤버 접근
 
 ## 제외된 기능
 
@@ -73,10 +76,6 @@ Unity Project 창의 `Packages/Jeomseon Unity Core`에서 코드를 확인하고
 ## 테스트
 
 테스트 프로젝트의 manifest에 이 패키지를 `testables`로 등록한 후 Unity Test Runner의 EditMode에서 실행합니다.
-
-## 호환성
-
-기존 JeomseonScriptPack에서 옮긴 소스의 `.meta` GUID와 C# namespace를 유지하여 기존 Unity 에셋 참조와 소스 호환성을 보존합니다.
 
 ## 라이선스
 
