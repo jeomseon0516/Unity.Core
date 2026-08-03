@@ -2,7 +2,7 @@
   "name": "com.jeomseon.unity.core",
   "version": "0.2.0",
   "displayName": "Jeomseon Unity Core",
-  "description": "Unity-focused extensions and utilities for game objects, mathematics, events, UI Toolkit, imaging, and rendering.",
+  "description": "Unity-focused extensions and utilities for game objects, mathematics, events, text, UI Toolkit, imaging, and rendering.",
   "unity": "6000.3",
   "unityRelease": "15f1",
   "dependencies": {

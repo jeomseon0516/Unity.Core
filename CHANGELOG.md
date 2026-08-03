@@ -1,5 +1,11 @@
 # 변경 기록
 
+## [Unreleased]
+
+### Added
+
+- GameObject Pooling과 무관한 thread-safe `StringBuilderPool` 및 테스트를 Unity Core의 `Jeomseon.Text` 영역으로 이동했습니다.
+
 ## [0.2.0] - 2026-07-31
 
 ### Changed

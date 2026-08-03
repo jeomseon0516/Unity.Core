@@ -59,6 +59,7 @@ The package remains editable under `Packages/Jeomseon Unity Core` in the Unity P
 - `Jeomseon.GameObjects`: GameObject and Transform extensions
 - `Jeomseon.Mathematics`: Unity Color and Vector conversions and operations
 - `Jeomseon.Events`, `Jeomseon.UIElements`: UnityEvent and UI Toolkit extensions
+- `Jeomseon.Text`: thread-safe `StringBuilderPool` with retention limits and duplicate-return validation
 - `Jeomseon.Imaging`, `Jeomseon.Rendering`: CPU pixel resampling and Renderer bounds calculation
 
 ## Dependency package
