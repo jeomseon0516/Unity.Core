@@ -6,7 +6,7 @@ Jeomseon Unity Core provides Unity-specific extensions and feature modules share
 
 ## Requirements
 
-- Unity 6000.3.15f1 or newer
+- Unity 6000.5.7f1 or newer
 
 ## Install with OpenUPM
 

@@ -17,7 +17,7 @@
 
 8. **P3-06 — 분리 배포 검증 체계 구축**
     - [x] Unity 참조 없이 순수 .NET 빌드와 단위 테스트가 통과하는 CI를 구성했습니다.
-    - [x] 공개 OpenUPM 패키지만 사용하는 Unity 6000.3.15f1 프로젝트에서 컴파일, Mono Player 및 IL2CPP Player 빌드를 검증했습니다.
+    - [x] 공개 OpenUPM 패키지만 사용하는 Unity 6000.5.7f1 프로젝트에서 컴파일, Mono Player 및 IL2CPP Player 빌드를 검증했습니다.
     - [x] IL2CPP Player 실행으로 캐시된 Reflection 필드 접근이 stripping 이후에도 동작하는지 검증했습니다.
     - [x] 순수 .NET DLL의 AssemblyRef와 Unity 패키지의 UPM 의존 방향·소스 중복을 검사하는 CI 경계 검사를 자동화했습니다.
 

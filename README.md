@@ -6,7 +6,7 @@ Jeomseon Unity 패키지들이 공통으로 사용하는 Unity 전용 확장과 
 
 ## 요구 사항
 
-- Unity 6000.3.15f1 이상
+- Unity 6000.5.7f1 이상
 
 ## OpenUPM으로 설치
 
