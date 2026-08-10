@@ -60,6 +60,7 @@ Unity Project 창의 `Packages/Jeomseon Unity Core`에서 코드를 확인하고
 - `Jeomseon.Mathematics`: Unity Color와 Vector 변환 및 연산
 - `Jeomseon.Events`, `Jeomseon.UIElements`: UnityEvent와 UI Toolkit 확장
 - `Jeomseon.Text`: 용량 제한과 중복 반환 검사를 제공하는 thread-safe `StringBuilderPool`
+- `Jeomseon.Unity.Operations`: Coroutine·Awaitable 구현이 공유하는 Unity 작업 수명 계약
 - `Jeomseon.Imaging`, `Jeomseon.Rendering`: CPU 픽셀 리샘플링과 Renderer Bounds 계산
 
 ## 의존 패키지

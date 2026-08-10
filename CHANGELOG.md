@@ -2,8 +2,11 @@
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-08-10
+
 ### Added
 
+- Coroutine과 Awaitable 패키지가 공유할 Unity 작업 수명 계약 `IManagedOperation`과 `ManagedOperationStatus`를 추가했습니다.
 - GameObject Pooling과 무관한 thread-safe `StringBuilderPool` 및 테스트를 Unity Core의 `Jeomseon.Text` 영역으로 이동했습니다.
 
 ## [0.2.0] - 2026-07-31
