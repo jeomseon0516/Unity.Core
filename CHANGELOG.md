@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-08-11
+
+- `Basic Usage` Sample에 `CoreCollectionsSample`이 이미 부착된 `CoreCollectionsSample.unity`
+  Scene을 추가했습니다. 기존에는 Scene 자산 없이 README로 컨텍스트 메뉴 실행만 안내하고 있어
+  `AGENTS.md`의 샘플 정책(Scene 자산 필수)을 충족하지 못했습니다.
+
 ## [0.2.2] - 2026-08-10
 
 ### Added
