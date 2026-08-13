@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Pool;
 
-namespace Jeomseon.Text
+namespace Jeomseon.Unity.Core.Text
 {
     /// <summary>
     /// Provides a thread-safe StringBuilder pool compatible with Unity's IObjectPool contract.
