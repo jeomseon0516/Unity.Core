@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jeomseon.Mathematics
+namespace Jeomseon.Unity.Core.Mathematics
 {
     public static class Vector3Extensions
     {

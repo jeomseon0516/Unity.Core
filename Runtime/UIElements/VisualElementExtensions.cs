@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace Jeomseon.UIElements
+namespace Jeomseon.Unity.Core.UIElements
 {
     public static class VisualElementExtensions
     {

@@ -1,4 +1,4 @@
-using Jeomseon.GameObjects;
+using Jeomseon.Unity.Core.GameObjects;
 using NUnit.Framework;
 using UnityEngine;
 

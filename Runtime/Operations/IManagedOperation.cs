@@ -1,6 +1,6 @@
 using System;
 
-namespace Jeomseon.Unity.Operations
+namespace Jeomseon.Unity.Core.Operations
 {
     /// <summary>
     /// Unity 수명에 따라 취소할 수 있고 종료 상태를 관찰할 수 있는 작업을 나타냅니다.

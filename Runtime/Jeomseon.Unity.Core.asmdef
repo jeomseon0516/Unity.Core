@@ -1,6 +1,6 @@
 {
   "name": "Jeomseon.Unity.Core",
-  "rootNamespace": "Jeomseon",
+  "rootNamespace": "Jeomseon.Unity.Core",
   "references": [],
   "includePlatforms": [],
   "excludePlatforms": [],

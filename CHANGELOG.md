@@ -1,6 +1,17 @@
 # 변경 기록
 
-## [Unreleased]
+## [0.3.0] - 2026-08-13
+
+- **(Breaking)** rootNamespace를 `Jeomseon` → `Jeomseon.Unity.Core`로 변경하고, 하위 네임스페이스를
+  전부 `Jeomseon.Unity.Core.<폴더>`로 정리했습니다(`Jeomseon.Events`→`Jeomseon.Unity.Core.Events`,
+  `Jeomseon.GameObjects`→`Jeomseon.Unity.Core.GameObjects`,
+  `Jeomseon.Imaging`→`Jeomseon.Unity.Core.Imaging`,
+  `Jeomseon.Mathematics`→`Jeomseon.Unity.Core.Mathematics`,
+  `Jeomseon.Rendering`→`Jeomseon.Unity.Core.Rendering`, `Jeomseon.Text`→`Jeomseon.Unity.Core.Text`,
+  `Jeomseon.UIElements`→`Jeomseon.Unity.Core.UIElements`,
+  `Jeomseon.Unity.Operations`(기존에도 유일하게 일관성이 어긋나 있었음)→`Jeomseon.Unity.Core.Operations`).
+  워크스페이스 전체 네임스페이스 규칙(패키지 rootNamespace는 `Jeomseon.Unity.<패키지 폴더명>`, 하위는
+  폴더 경로를 따름, `AGENTS.md` 참고)을 적용한 것으로, 폴더 구조 변경은 없습니다.
 
 ## [0.2.3] - 2026-08-11
 

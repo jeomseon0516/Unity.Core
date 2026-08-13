@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jeomseon.GameObjects
+namespace Jeomseon.Unity.Core.GameObjects
 {
     public static class GameObjectExtensions
     {

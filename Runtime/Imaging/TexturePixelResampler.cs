@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Jeomseon.Imaging
+namespace Jeomseon.Unity.Core.Imaging
 {
     /// <summary>
     /// CPU에서 <see cref="Color"/> 픽셀 버퍼를 변환합니다.
