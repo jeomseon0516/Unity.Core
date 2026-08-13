@@ -1,6 +1,6 @@
 using System;
-using Jeomseon.Imaging;
-using Jeomseon.Rendering;
+using Jeomseon.Unity.Core.Imaging;
+using Jeomseon.Unity.Core.Rendering;
 using NUnit.Framework;
 using UnityEngine;
 using Object = UnityEngine.Object;

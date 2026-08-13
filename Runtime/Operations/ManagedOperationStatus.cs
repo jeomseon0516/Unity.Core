@@ -1,4 +1,4 @@
-namespace Jeomseon.Unity.Operations
+namespace Jeomseon.Unity.Core.Operations
 {
     /// <summary>Unity가 관리하는 작업의 현재 상태를 나타냅니다.</summary>
     public enum ManagedOperationStatus

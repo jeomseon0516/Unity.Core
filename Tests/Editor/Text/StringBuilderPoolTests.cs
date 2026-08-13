@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Jeomseon.Text;
+using Jeomseon.Unity.Core.Text;
 using NUnit.Framework;
 
 namespace Jeomseon.Tests

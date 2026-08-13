@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace Jeomseon.Events
+namespace Jeomseon.Unity.Core.Events
 {
     public static class UnityEventExtensions
     {

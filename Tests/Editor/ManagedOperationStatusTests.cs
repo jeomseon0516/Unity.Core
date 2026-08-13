@@ -1,4 +1,4 @@
-using Jeomseon.Unity.Operations;
+using Jeomseon.Unity.Core.Operations;
 using NUnit.Framework;
 
 namespace Jeomseon.Tests

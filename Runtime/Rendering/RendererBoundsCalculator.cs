@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Jeomseon.Rendering
+namespace Jeomseon.Unity.Core.Rendering
 {
     /// <summary>
     /// GameObject 계층에 포함된 Renderer의 월드 공간 경계를 계산합니다.
