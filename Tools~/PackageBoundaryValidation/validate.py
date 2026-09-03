@@ -34,8 +34,8 @@ def validate_manifest(errors: list[str]) -> None:
 
 def validate_assembly_definition(errors: list[str]) -> None:
     assembly_definition = load_json(RUNTIME_ASMDEF)
-    if assembly_definition.get("rootNamespace") != "Jeomseon":
-        errors.append("Runtime asmdef rootNamespace must remain Jeomseon.")
+    if assembly_definition.get("rootNamespace") != "Jeomseon.Unity.Core":
+        errors.append("Runtime asmdef rootNamespace must remain Jeomseon.Unity.Core.")
     if assembly_definition.get("overrideReferences") is not False:
         errors.append("Runtime asmdef must use normal package dependency resolution.")
 
