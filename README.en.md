@@ -8,9 +8,9 @@ Jeomseon Unity Core provides Unity-specific extensions and feature modules share
 
 - Unity 6000.6.0f1 or newer
 
-## Install with OpenUPM
+## Install via OpenUPM
 
-Register the OpenUPM scoped registry once in `Packages/manifest.json`.
+Register the OpenUPM scoped registry once in your project's `Packages/manifest.json`.
 
 ```json
 {
@@ -24,17 +24,17 @@ Register the OpenUPM scoped registry once in `Packages/manifest.json`.
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.core": "0.2.0"
+    "com.jeomseon.unity.core": "0.3.2"
   }
 }
 ```
 
-## Install from Git
+## Install via Git URL
 
-Use this URL with Unity Package Manager's `Install package from git URL` command.
+Enter the following URL in Unity Package Manager's `Install package from git URL`.
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.2.0
+https://github.com/jeomseon0516/Unity.Core.git#v0.3.2
 ```
 
 ## Local development

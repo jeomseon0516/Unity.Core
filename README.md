@@ -24,17 +24,17 @@ Jeomseon Unity 패키지들이 공통으로 사용하는 Unity 전용 확장과 
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.core": "0.2.0"
+    "com.jeomseon.unity.core": "0.3.2"
   }
 }
 ```
 
 ## Git URL로 설치
 
-Unity Package Manager의 `Install package from git URL`에 다음 URL을 입력합니다.
+Unity Package Manager의 `Install package from git URL`에 다음 주소를 사용합니다.
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.2.0
+https://github.com/jeomseon0516/Unity.Core.git#v0.3.2
 ```
 
 ## 로컬 개발
