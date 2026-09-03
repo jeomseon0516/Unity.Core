@@ -1,5 +1,9 @@
 # 변경 기록
 
+## [0.3.1] - 2026-09-03
+
+- Unity 최소 버전을 `6000.5.7f1` → `6000.6.0f1`로 상향했습니다. 한·영 README를 동기화했습니다. Package boundary CI가 기대하던 잘못된 Runtime `rootNamespace` 값(`Jeomseon` → `Jeomseon.Unity.Core`)도 정정했습니다. 코드·API 변경은 없습니다.
+
 ## [0.3.0] - 2026-08-13
 
 - **(Breaking)** rootNamespace를 `Jeomseon` → `Jeomseon.Unity.Core`로 변경하고, 하위 네임스페이스를
