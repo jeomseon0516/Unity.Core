@@ -19,13 +19,13 @@
   `Jeomseon.UIElements`→`Jeomseon.Unity.Core.UIElements`,
   `Jeomseon.Unity.Operations`(기존에도 유일하게 일관성이 어긋나 있었음)→`Jeomseon.Unity.Core.Operations`).
   워크스페이스 전체 네임스페이스 규칙(패키지 rootNamespace는 `Jeomseon.Unity.<패키지 폴더명>`, 하위는
-  폴더 경로를 따름, `AGENTS.md` 참고)을 적용한 것으로, 폴더 구조 변경은 없습니다.
+  폴더 경로를 따름)을 적용한 것으로, 폴더 구조 변경은 없습니다.
 
 ## [0.2.3] - 2026-08-11
 
 - `Basic Usage` Sample에 `CoreCollectionsSample`이 이미 부착된 `CoreCollectionsSample.unity`
   Scene을 추가했습니다. 기존에는 Scene 자산 없이 README로 컨텍스트 메뉴 실행만 안내하고 있어
-  `AGENTS.md`의 샘플 정책(Scene 자산 필수)을 충족하지 못했습니다.
+  바로 실행할 수 있는 Scene Sample 요건을 충족하지 못했습니다.
 
 ## [0.2.2] - 2026-08-10
 
