@@ -1,16 +1,28 @@
 # Jeomseon Unity Core
 
-[한국어](./README.md) | English
+[한국어](README.md) | English
 
-Jeomseon Unity Core provides Unity-specific extensions and feature modules shared by Jeomseon Unity packages.
+Provides shared Unity Object/math/UI/imaging/text helpers and operation status contracts. Unity-independent collections live in Jeomseon.Core.
+
+## Quick start
+
+Call helpers in their feature namespaces. Pair StringBuilderPool Get/Release; IManagedOperation consumers observe Status, Exception, and Completed.
+
+## Contracts and limitations
+
+Respect Unity main-thread and resource lifetimes. StringBuilderPool thread safety does not extend to Unity helpers. Optional features such as JSON remain separate packages.
 
 ## Requirements
 
-- Unity 6000.6.0f1 or newer
+- Unity `6000.6.0f1`
+- Package: `com.jeomseon.unity.core` `0.3.2`
+- `com.jeomseon.core`: `0.1.3`
+- `com.unity.modules.particlesystem`: `1.0.0`
+- `com.unity.modules.uielements`: `1.0.0`
 
-## Install via OpenUPM
+## Installation
 
-Register the OpenUPM scoped registry once in your project's `Packages/manifest.json`.
+Merge this into your project's `Packages/manifest.json`; preserve existing dependencies and registries.
 
 ```json
 {
@@ -29,56 +41,57 @@ Register the OpenUPM scoped registry once in your project's `Packages/manifest.j
 }
 ```
 
-## Install via Git URL
-
-Enter the following URL in Unity Package Manager's `Install package from git URL`.
+Or use **Install package from git URL** in Package Manager:
 
 ```text
 https://github.com/jeomseon0516/Unity.Core.git#v0.3.2
 ```
 
-## Local development
+## API usage and details
 
-Reference this repository as a local package from an integration project.
+### Contents
 
-```json
-{
-  "dependencies": {
-    "com.jeomseon.unity.core": "file:../../Jeomseon.Unity.Core"
-  },
-  "testables": [
-    "com.jeomseon.unity.core"
-  ]
-}
-```
+- `Jeomseon.Unity.Core.GameObjects`: GameObject and Transform extensions
+- `Jeomseon.Unity.Core.Mathematics`: Unity Color and Vector conversions and operations
+- `Jeomseon.Unity.Core.Events`, `Jeomseon.Unity.Core.UIElements`: UnityEvent and UI Toolkit extensions
+- `Jeomseon.Unity.Core.Text`: thread-safe `StringBuilderPool` with retention limits and duplicate-return validation
+- `Jeomseon.Unity.Core.Operations`: Unity operation lifetime contracts shared by Coroutine and Awaitable implementations
+- `Jeomseon.Unity.Core.Imaging`, `Jeomseon.Unity.Core.Rendering`: CPU pixel resampling and Renderer bounds calculation
 
-The package remains editable under `Packages/Jeomseon Unity Core` in the Unity Project window.
-
-## Contents
-
-- `Jeomseon.GameObjects`: GameObject and Transform extensions
-- `Jeomseon.Mathematics`: Unity Color and Vector conversions and operations
-- `Jeomseon.Events`, `Jeomseon.UIElements`: UnityEvent and UI Toolkit extensions
-- `Jeomseon.Text`: thread-safe `StringBuilderPool` with retention limits and duplicate-return validation
-- `Jeomseon.Unity.Operations`: Unity operation lifetime contracts shared by Coroutine and Awaitable implementations
-- `Jeomseon.Imaging`, `Jeomseon.Rendering`: CPU pixel resampling and Renderer bounds calculation
-
-## Dependency package
+### Dependency package
 
 - UPM installs `com.jeomseon.core` alongside this package.
 - `Jeomseon.Collections`: Deque, PriorityQueue, and general collection extensions
 - `Jeomseon.Reflection`: type discovery, instance activation, and cached member access
 
-## Excluded integrations
+### Excluded integrations
 
 - JsonUtility, which depends on Newtonsoft JSON
 
 These integrations remain outside Core to avoid imposing unrelated dependencies.
 
-## Testing
+### Testing
 
 Add this package to the integration project's `testables` list, then run the EditMode suite with Unity Test Runner.
 
+## Samples
+
+Import the desired entry from **Package Manager > Samples**. Use the included Scene/Editor tool and complete its Setup step first, if required.
+
+- [Basic Usage](Samples~/BasicUsage/README.md)
+  - [CoreCollectionsSample](Samples~/BasicUsage/CoreCollectionsSample.unity)
+
+## Tests
+
+[Test sources](Tests)
+
+Add the package ID to manifest `testables`, then execute its relevant EditMode/PlayMode assemblies in Unity Test Runner.
+
+## Further reading
+
+[Complete source map and package metadata](Documentation~/Overview.en.md)
+- [Changelog](CHANGELOG.md)
+
 ## License
 
-[MIT License](./LICENSE.md)
+[License](LICENSE.md)
