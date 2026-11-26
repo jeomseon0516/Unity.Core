@@ -17,7 +17,7 @@ Respect Unity main-thread and resource lifetimes. StringBuilderPool thread safet
 ## Package requirements
 
 - Package ID: `com.jeomseon.unity.core`
-- Version: `0.3.2`
+- Version: `0.4.0`
 - Unity: `6000.6` / `0f1`
 - `com.jeomseon.core`: `0.1.3`
 - `com.unity.modules.particlesystem`: `1.0.0`

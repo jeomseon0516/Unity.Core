@@ -4,6 +4,13 @@
 
 Unity Object·수학·UI·이미지·문자열 관련 공통 확장과 작업 상태 계약을 제공합니다. Unity 비의존 자료구조는 Jeomseon.Core에 둡니다.
 
+## 카메라 뷰포트와 그리드 셀 범위
+
+- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners`는 정규화된 뷰포트의 네 모서리를 월드 평면에 투영합니다. 호출자가 준비한 `Span<Vector3>`의 첫 네 칸에 좌하단, 우하단, 좌상단, 우상단 순으로 기록합니다. 광선 하나라도 전방에서 평면을 만나지 못하면 `false`를 반환하고 버퍼를 유지합니다.
+- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate`는 그리드 로컬 XY 평면에 투영해 셀 축에 정렬된 `BoundsInt`를 반환합니다. 직사각형 레이아웃과 XYZ 셀 축 순서를 지원합니다. X와 Y는 최소값을 내리고 최대값을 올린 반개구간이고, Z는 `[0, 1)`입니다. 투영에 실패하거나 레이아웃이 지원 범위를 벗어나면 `false`와 기본 경계를 반환합니다.
+
+광선은 카메라의 근거리 클리핑 평면에서 시작합니다. 두 API는 투영 면적을 계산하며 원거리 클리핑과 가림 판정을 적용하지 않습니다. 카메라나 그리드가 없거나 파괴됐으면 `ArgumentNullException`을, 모서리 버퍼가 네 칸 미만이면 `ArgumentException`을 던집니다.
+
 ## 빠르게 시작하기
 
 필요한 namespace의 확장 메서드를 직접 호출합니다. StringBuilderPool을 사용하면 Get/Release를 대칭으로 하고, IManagedOperation 소비자는 Status·Exception·Completed 계약을 사용합니다.
@@ -15,7 +22,7 @@ Unity Object나 렌더링 API는 메인 스레드와 리소스 수명을 지켜�
 ## 요구 사항
 
 - Unity `6000.6.0f1`
-- 패키지: `com.jeomseon.unity.core` `0.3.2`
+- 패키지: `com.jeomseon.unity.core` `0.4.0`
 - `com.jeomseon.core`: `0.1.3`
 - `com.unity.modules.particlesystem`: `1.0.0`
 - `com.unity.modules.uielements`: `1.0.0`
@@ -36,7 +43,7 @@ Unity Object나 렌더링 API는 메인 스레드와 리소스 수명을 지켜�
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.core": "0.3.2"
+    "com.jeomseon.unity.core": "0.4.0"
   }
 }
 ```
@@ -44,7 +51,7 @@ Unity Object나 렌더링 API는 메인 스레드와 리소스 수명을 지켜�
 또는 Package Manager의 **Install package from git URL**을 사용합니다:
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.3.2
+https://github.com/jeomseon0516/Unity.Core.git#v0.4.0
 ```
 
 ## API 사용과 상세 설명

@@ -4,6 +4,13 @@
 
 Provides shared Unity Object/math/UI/imaging/text helpers and operation status contracts. Unity-independent collections live in Jeomseon.Core.
 
+## Camera viewport and grid cell bounds
+
+- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners` projects all four normalized viewport corners onto a world plane. It writes bottom-left, bottom-right, top-left, and top-right into the first four slots of the caller's `Span<Vector3>`. If any ray fails to meet the plane in front of its origin, the method returns `false` and preserves the buffer.
+- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate` projects onto the grid's local XY plane and returns a cell-aligned `BoundsInt`. It supports rectangular layout with XYZ cell swizzle. X and Y are half-open intervals with a rounded-down minimum and a rounded-up maximum, and Z is `[0, 1)`. A failed projection or unsupported layout returns `false` and the default bounds.
+
+Rays originate at the camera's near clipping plane. Both APIs calculate a projection footprint and omit far clipping and occlusion. A missing or destroyed camera or grid throws `ArgumentNullException`, and an output span with fewer than four slots throws `ArgumentException`.
+
 ## Quick start
 
 Call helpers in their feature namespaces. Pair StringBuilderPool Get/Release; IManagedOperation consumers observe Status, Exception, and Completed.
@@ -15,7 +22,7 @@ Respect Unity main-thread and resource lifetimes. StringBuilderPool thread safet
 ## Requirements
 
 - Unity `6000.6.0f1`
-- Package: `com.jeomseon.unity.core` `0.3.2`
+- Package: `com.jeomseon.unity.core` `0.4.0`
 - `com.jeomseon.core`: `0.1.3`
 - `com.unity.modules.particlesystem`: `1.0.0`
 - `com.unity.modules.uielements`: `1.0.0`
@@ -36,7 +43,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.core": "0.3.2"
+    "com.jeomseon.unity.core": "0.4.0"
   }
 }
 ```
@@ -44,7 +51,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
 Or use **Install package from git URL** in Package Manager:
 
 ```text
-https://github.com/jeomseon0516/Unity.Core.git#v0.3.2
+https://github.com/jeomseon0516/Unity.Core.git#v0.4.0
 ```
 
 ## API usage and details
