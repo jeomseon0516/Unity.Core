@@ -17,7 +17,7 @@ Unity Object나 렌더링 API는 메인 스레드와 리소스 수명을 지켜�
 ## 패키지 요구 사항
 
 - Package ID: `com.jeomseon.unity.core`
-- Version: `0.3.2`
+- Version: `0.4.0`
 - Unity: `6000.6` / `0f1`
 - `com.jeomseon.core`: `0.1.3`
 - `com.unity.modules.particlesystem`: `1.0.0`
