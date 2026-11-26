@@ -73,6 +73,16 @@ namespace Jeomseon.Tests
         }
 
         [Test]
+        public void ProjectCorners_RejectsNonFiniteIntersection()
+        {
+            var plane = new Plane(Vector3.forward, float.NegativeInfinity);
+            var corners = new[] { Vector3.one, Vector3.one, Vector3.one, Vector3.one };
+
+            Assert.That(ViewportPlaneProjection.TryProjectCorners(_camera, plane, corners), Is.False);
+            Assert.That(corners, Is.All.EqualTo(Vector3.one));
+        }
+
+        [Test]
         public void ProjectCorners_RejectsShortBuffer()
         {
             Assert.Throws<ArgumentException>(() => ViewportPlaneProjection.TryProjectCorners(
@@ -100,6 +110,16 @@ namespace Jeomseon.Tests
         public void Calculate_ReturnsDefaultWhenPlaneIsBehindCamera()
         {
             _grid.transform.position = new Vector3(0f, 0f, -20f);
+
+            Assert.That(ViewportCellBounds.TryCalculate(_camera, _grid, out var bounds), Is.False);
+            Assert.That(bounds, Is.EqualTo(default(BoundsInt)));
+        }
+
+        [TestCase(1e9f)]
+        [TestCase(2e9f)]
+        public void Calculate_RejectsUnrepresentableBounds(float orthographicSize)
+        {
+            _camera.orthographicSize = orthographicSize;
 
             Assert.That(ViewportCellBounds.TryCalculate(_camera, _grid, out var bounds), Is.False);
             Assert.That(bounds, Is.EqualTo(default(BoundsInt)));

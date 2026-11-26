@@ -6,8 +6,8 @@ Unity Object·수학·UI·이미지·문자열 관련 공통 확장과 작업 �
 
 ## 카메라 뷰포트와 그리드 셀 범위
 
-- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners`는 정규화된 뷰포트의 네 모서리를 월드 평면에 투영합니다. 호출자가 준비한 `Span<Vector3>`의 첫 네 칸에 좌하단, 우하단, 좌상단, 우상단 순으로 기록합니다. 광선 하나라도 전방에서 평면을 만나지 못하면 `false`를 반환하고 버퍼를 유지합니다.
-- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate`는 그리드 로컬 XY 평면에 투영해 셀 축에 정렬된 `BoundsInt`를 반환합니다. 직사각형 레이아웃과 XYZ 셀 축 순서를 지원합니다. X와 Y는 최소값을 내리고 최대값을 올린 반개구간이고, Z는 `[0, 1)`입니다. 투영에 실패하거나 레이아웃이 지원 범위를 벗어나면 `false`와 기본 경계를 반환합니다.
+- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners`는 정규화된 뷰포트의 네 모서리를 월드 평면에 투영합니다. 호출자가 준비한 `Span<Vector3>`의 첫 네 칸에 좌하단, 우하단, 좌상단, 우상단 순으로 기록합니다. 광선 하나라도 전방에서 유한한 교점을 얻지 못하면 `false`를 반환하고 버퍼를 유지합니다.
+- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate`는 그리드 로컬 XY 평면에 투영해 셀 축에 정렬된 `BoundsInt`를 반환합니다. 직사각형 레이아웃과 XYZ 셀 축 순서를 지원합니다. X와 Y는 최소값을 내리고 최대값을 올린 반개구간이고, Z는 `[0, 1)`입니다. 투영에 실패하거나 레이아웃을 지원하지 않거나 셀 범위를 `BoundsInt`로 표현할 수 없으면 `false`와 기본 경계를 반환합니다.
 
 광선은 카메라의 근거리 클리핑 평면에서 시작합니다. 두 API는 투영 면적을 계산하며 원거리 클리핑과 가림 판정을 적용하지 않습니다. 카메라나 그리드가 없거나 파괴됐으면 `ArgumentNullException`을, 모서리 버퍼가 네 칸 미만이면 `ArgumentException`을 던집니다.
 

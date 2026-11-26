@@ -6,8 +6,8 @@ Provides shared Unity Object/math/UI/imaging/text helpers and operation status c
 
 ## Camera viewport and grid cell bounds
 
-- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners` projects all four normalized viewport corners onto a world plane. It writes bottom-left, bottom-right, top-left, and top-right into the first four slots of the caller's `Span<Vector3>`. If any ray fails to meet the plane in front of its origin, the method returns `false` and preserves the buffer.
-- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate` projects onto the grid's local XY plane and returns a cell-aligned `BoundsInt`. It supports rectangular layout with XYZ cell swizzle. X and Y are half-open intervals with a rounded-down minimum and a rounded-up maximum, and Z is `[0, 1)`. A failed projection or unsupported layout returns `false` and the default bounds.
+- `Jeomseon.Unity.Core.Rendering.ViewportPlaneProjection.TryProjectCorners` projects all four normalized viewport corners onto a world plane. It writes bottom-left, bottom-right, top-left, and top-right into the first four slots of the caller's `Span<Vector3>`. If any ray fails to produce a finite intersection in front of its origin, the method returns `false` and preserves the buffer.
+- `Jeomseon.Unity.Core.Grids.ViewportCellBounds.TryCalculate` projects onto the grid's local XY plane and returns a cell-aligned `BoundsInt`. It supports rectangular layout with XYZ cell swizzle. X and Y are half-open intervals with a rounded-down minimum and a rounded-up maximum, and Z is `[0, 1)`. A failed projection, unsupported layout, or cell range outside the representable `BoundsInt` limits returns `false` and the default bounds.
 
 Rays originate at the camera's near clipping plane. Both APIs calculate a projection footprint and omit far clipping and occlusion. A missing or destroyed camera or grid throws `ArgumentNullException`, and an output span with fewer than four slots throws `ArgumentException`.
 

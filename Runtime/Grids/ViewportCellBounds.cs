@@ -14,8 +14,8 @@ namespace Jeomseon.Unity.Core.Grids
         /// 결과는 행과 열에 정렬된 사각형이며 Z 범위는 [0, 1)입니다.
         /// </summary>
         /// <remarks>
-        /// Rectangle 레이아웃과 XYZ 셀 축 순서를 지원합니다. 다른 레이아웃 또는 교차 실패 시
-        /// false 및 기본 경계를 반환합니다. 원거리 클리핑과 가림은 계산에 포함하지 않습니다.
+        /// Rectangle 레이아웃과 XYZ 셀 축 순서를 지원합니다. 지원하지 않는 레이아웃, 교차 실패 또는
+        /// BoundsInt 범위 초과 시 false와 기본 경계를 반환합니다. 원거리 클리핑과 가림은 계산에 포함하지 않습니다.
         /// </remarks>
         /// <exception cref="ArgumentNullException">카메라 또는 그리드가 없거나 파괴되었습니다.</exception>
         public static bool TryCalculate(Camera camera, GridLayout grid, out BoundsInt bounds)
@@ -42,14 +42,35 @@ namespace Jeomseon.Unity.Core.Grids
             foreach (var corner in corners)
             {
                 var cell = grid.LocalToCellInterpolated(transform.InverseTransformPoint(corner));
-                min = Vector2.Min(min, cell);
-                max = Vector2.Max(max, cell);
+                if (!float.IsFinite(cell.x) || !float.IsFinite(cell.y))
+                    return false;
+
+                var xy = new Vector2(cell.x, cell.y);
+                min = Vector2.Min(min, xy);
+                max = Vector2.Max(max, xy);
             }
 
-            var xMin = Mathf.FloorToInt(min.x);
-            var yMin = Mathf.FloorToInt(min.y);
-            bounds = new BoundsInt(xMin, yMin, 0, Mathf.CeilToInt(max.x) - xMin,
-                Mathf.CeilToInt(max.y) - yMin, 1);
+            if (!TryRoundRange(min.x, max.x, out var xMin, out var width) ||
+                !TryRoundRange(min.y, max.y, out var yMin, out var height))
+                return false;
+
+            bounds = new BoundsInt(xMin, yMin, 0, width, height, 1);
+            return true;
+        }
+
+        private static bool TryRoundRange(float min, float max, out int start, out int size)
+        {
+            var lower = Math.Floor(min);
+            var upper = Math.Ceiling(max);
+            var length = upper - lower;
+            start = 0;
+            size = 0;
+
+            if (lower < int.MinValue || upper > int.MaxValue || length > int.MaxValue)
+                return false;
+
+            start = (int)lower;
+            size = (int)length;
             return true;
         }
     }

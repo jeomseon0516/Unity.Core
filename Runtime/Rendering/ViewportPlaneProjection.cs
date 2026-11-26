@@ -12,7 +12,7 @@ namespace Jeomseon.Unity.Core.Rendering
         /// 네 모서리의 교점을 좌하단, 우하단, 좌상단, 우상단 순으로 기록합니다.
         /// </summary>
         /// <remarks>
-        /// 한 광선이라도 시작점 앞에서 평면을 만나지 못하면 false를 반환하며 결과를 변경하지 않습니다.
+        /// 한 광선이라도 시작점 앞에서 유한한 교점을 얻지 못하면 false를 반환하며 결과를 변경하지 않습니다.
         /// 광선은 카메라의 근거리 클리핑 평면에서 시작하며 원거리 클리핑 평면까지의 거리는 검사하지 않습니다.
         /// </remarks>
         /// <exception cref="ArgumentNullException">카메라가 없거나 파괴되었습니다.</exception>
@@ -31,7 +31,11 @@ namespace Jeomseon.Unity.Core.Rendering
                 if (!plane.Raycast(ray, out var distance))
                     return false;
 
-                intersections[index] = ray.GetPoint(distance);
+                var intersection = ray.GetPoint(distance);
+                if (!float.IsFinite(intersection.x) || !float.IsFinite(intersection.y) || !float.IsFinite(intersection.z))
+                    return false;
+
+                intersections[index] = intersection;
             }
 
             intersections.CopyTo(corners);
